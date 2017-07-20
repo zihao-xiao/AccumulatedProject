@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang='zh-CN' ng-app='myApp'>
+
+	#parse("/common/head.vm")
+
+	<body ng-controller='myController' style="background: url($link.contextPath/assets/img/38av/bg.gif);">
+		
+		$screen_content
+		
+		$!javascript_back
+	</body>
+	
+</html>

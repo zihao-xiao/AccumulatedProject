@@ -1,0 +1,35 @@
+#set($layout="layout/default2.vm")
+#define($javascript)
+
+#end ##html
+上传视频
+	<form id="from" action="$link.contextPath/upload/upload_video" method="post" enctype="multipart/form-data">
+		<input type="text" name="titleName">
+		<input type="file" name="uploadfile">
+		<input type="text" name="remark">
+		<input type="submit">
+	</form>
+	
+上传图片
+	<form id="from" action="$link.contextPath/upload/upload_image" method="post" enctype="multipart/form-data">
+		<input type="text" name="titleName">
+		<input type="file" name="uploadfile">
+		<input type="text" name="remark">
+		<input type="submit">
+	</form>
+	
+上传图片
+	<form id="from" action="$link.contextPath/upload/upload_images" method="post" enctype="multipart/form-data">
+		<input type="text" name="titleName">
+		<input type="file" name="uploadfile">
+		<input type="file" name="uploadfile">
+		<input type="file" name="uploadfile">
+		<input type="text" name="remark">
+		<input type="submit">
+	</form>
+	
+#define($javascript_back)
+	<script type="text/javascript">
+	
+	</script>
+#end

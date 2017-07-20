@@ -1,0 +1,27 @@
+#define($javascript)
+
+#end
+##html
+Hello {{name || 'World'}}!<br>
+Your name: <input type="text" id="name" ng-model="name" placeholder="World"><br>
+Your password: <input type="password" id="pwd" ng-model="password" placeholder="">
+<hr>
+<button onclick="login()">登录</button>
+        
+        
+#define($javascript_back)
+<script type="text/javascript">
+function login() {
+	var info={name:$("#name").val(),pwd:$("#pwd").val()};
+    $.ajax({
+        url: 'login',
+        type: 'post',
+        data:info,
+        success: function (resp) {
+            alert(resp);
+        }
+    });
+}
+login();
+</script>
+#end

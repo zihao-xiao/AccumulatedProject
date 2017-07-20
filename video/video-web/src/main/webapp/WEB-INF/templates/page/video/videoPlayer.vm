@@ -1,0 +1,86 @@
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/css/index.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/PlugIn/font-awesome.min.css" />
+#end ##html
+	<!--视频播放器-->
+	<div id='a1'></div>
+	<!--相关视频-->
+	<section class="bor-max" style="margin-top: 10px;">
+		<div class="new-video">
+			<!--标题-->
+			<div class="nv-title">
+				<span><i class="fa fa-desktop"></i>相关视频</span> <span><i
+					class="fa fa-refresh"></i>换一波</span>
+			</div>
+			<!--视频列表-->
+			<div class="nv-list">
+				<div class="one-video">
+					<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top"
+							style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+					</a>
+				</div>
+				<div class="one-video">
+					<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top"
+							style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+					</a>
+				</div>
+				<div class="one-video">
+					<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top"
+							style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+					</a>
+				</div>
+				<div class="one-video">
+					<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top"
+							style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+					</a>
+				</div>
+				<div class="one-video">
+					<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top"
+							style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+#define($javascript_back)
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jquery.min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/ckplayer/ckplayer.js"></script>
+	<script>
+		$(function(){
+			var winheight = $(window).height()-60;
+			var flashvars = {
+	        	f: "$!video.compilePath",
+	            c: 0,
+	            v: 85,
+	            p:1
+	        };
+			var params = { bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent' };
+			CKobject.embedSWF('$link.contextPath/assets/PlugIn/ckplayer/ckplayer.swf', 'a1', 'ckplayer_a1', '100%', winheight, flashvars, params);
+			});
+	</script>
+#end

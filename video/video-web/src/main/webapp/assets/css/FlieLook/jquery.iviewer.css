@@ -1,0 +1,82 @@
+.viewer
+{
+    -ms-touch-action: none;
+}
+.viewer img
+{
+    image-orientation: from-image;
+}
+.iviewer_common
+{
+    position: absolute;
+    bottom: 10px;
+    border: 1px solid #000;
+    height: 28px;
+    z-index: 5000;
+}
+
+
+
+.iviewer_button
+{
+    width: 28px;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.iviewer_zoom_in
+{
+    left: 20px;
+    background: url(../../img/clipboard/baio_06.png) center center no-repeat;
+}
+
+.iviewer_zoom_out
+{
+    left: 55px;
+    background: url(../../img/clipboard/baio_03.png) center center no-repeat;
+}
+
+.iviewer_zoom_zero
+{
+    left: 90px;
+    background: url(../../img/clipboard/baio_14.png) center center no-repeat;
+}
+
+.iviewer_zoom_fit
+{
+    left: 125px;
+    background: url(../../img/clipboard/baio_10.png) center center no-repeat;
+}
+
+.iviewer_zoom_status
+{
+    left: 160px;
+    font: 1em/28px Sans;
+    color: #000;
+    background-color: #02e2ff;
+    text-align: center;
+    width: 60px;
+}
+
+.iviewer_rotate_left
+{
+    left: 227px;
+    background: #fff url(../../img/clipboard/baio_08.png) center center no-repeat;
+}
+
+.iviewer_rotate_right
+{
+    left: 262px;
+    background: #fff url(../../img/clipboard/baio_12.png) center center no-repeat;
+}
+.iviewer_uppage
+{
+    left: 297px;
+    background: #fff url(../Content/images/zhantieban/uppage.png) center center no-repeat;
+}
+.iviewer_nextpage
+{
+    left: 333px;
+    background: #fff url(../Content/images/zhantieban/nextpage.png) center center no-repeat;
+}

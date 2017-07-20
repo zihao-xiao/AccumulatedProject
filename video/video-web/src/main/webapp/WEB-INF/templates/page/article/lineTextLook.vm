@@ -1,0 +1,40 @@
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/css/lineText.css" />
+#end
+	<!--字号加减-->
+	<div class="font-Update">
+		<div data-type="add">+</div>
+		<div data-type="reduce">-</div>
+	</div>
+	<section class="tlook-max">
+		<!--头部-->
+		<div class="tlook-title">
+			<p>$!bean.titleName</p>
+			<span>发布时间：$!date.format('yyyy-MM-dd HH:mm',$!bean.createdTime)</span>
+		</div>
+		<!--正文开始-->
+		<div class="islookZW">
+			#parse("article/$!{bean.id}.txt")
+		</div>
+	</section>
+#define($javascript_back)
+	<script type="text/javascript"
+		src="$link.contextPath/assets/PlugIn/jquery.min.js"></script>
+	<script type="text/javascript">
+		var fontsize = 18;
+		$(".font-Update").on("click", "div", function() {
+			var thistype = $(this).attr("data-type");
+			if (thistype == "add") {
+				if (fontsize <= 26) {
+					fontsize += 2;
+					$(".islookZW").css("font-size", fontsize)
+				}
+			} else if (thistype == "reduce") {
+				if (fontsize >= 20) {
+					fontsize -= 2;
+					$(".islookZW").css("font-size", fontsize)
+				}
+			}
+		})
+	</script>
+#end

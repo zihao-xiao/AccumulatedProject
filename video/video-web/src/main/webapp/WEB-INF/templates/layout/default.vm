@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='zh-CN' ng-app='myApp'>
+
+	#parse("/common/head.vm")
+
+	<body ng-controller='myController'>
+		#parse("/common/header.vm")
+		
+		$screen_content
+		
+		#parse("/common/bottom.vm")
+		
+		$!javascript_back
+	</body>
+	
+</html>

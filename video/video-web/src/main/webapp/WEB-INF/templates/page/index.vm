@@ -1,0 +1,258 @@
+#set($layout="layout/default.vm")
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/css/index.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/PlugIn/font-awesome.min.css" />
+#end
+##html
+
+	<!--轮播区域-->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			#foreach($bean in $!imgList)
+			<li data-target="#carousel-example-generic" data-slide-to="$!{velocityCount-1}" #if($velocityCount==1) class="active" #end></li>
+			#end
+<!-- 			<li data-target="#carousel-example-generic" data-slide-to="1"></li> -->
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			#foreach($bean in $!imgList)
+			<div class="item  #if($velocityCount==1) active #end">
+				<img src="$!bean.sourcesPath" alt="$!bean.imgTitle">
+				<div class="carousel-caption">
+	
+				</div>
+			</div>
+			#end
+<!-- 			<div class="item"> -->
+<!-- 				<img src="$link.contextPath/assets/img/banner/banner2.png" alt="图片2"> -->
+<!-- 				<div class="carousel-caption"> -->
+	
+<!-- 				</div> -->
+<!-- 			</div> -->
+		</div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+		
+		<!--最新视频-->
+		<section class="bor-max" style="margin-top: 10px;">
+			<div class="new-video">
+				<!--标题-->
+				<div class="nv-title">
+					<span><i class="fa fa-desktop"></i>最新视频</span>
+					<span><i class="fa fa-refresh"></i>换一波</span>
+				</div>
+				<!--视频列表-->
+				<div class="nv-list">
+					#foreach($info in $list)
+					<div class="one-video">
+						<a href="$link.contextPath/video/video_player?vid=$!info.id" target="_blank">
+						<div class="ov-top" style="background: url($!info.thumbnailsPath) no-repeat;"></div>
+						<div class="ov-down">
+							<p>$!info.videoDesc</p>
+							<span>发布时间：$!date.format('yyyy-MM-dd HH:mm',$!info.createTime)</span>
+						</div>
+						</a>
+					</div>
+					#end
+<!-- 					<div class="one-video"> -->
+<!-- 						<a href="videoPlayer.html" target="_blank"> -->
+<!-- 						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div> -->
+<!-- 						<div class="ov-down"> -->
+<!-- 							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p> -->
+<!-- 							<span>发布时间：2017-11-11</span> -->
+<!-- 						</div> -->
+<!-- 						</a> -->
+<!-- 					</div> -->
+				</div>
+			</div>
+		</section>
+		<!--每周热门-->
+		<section class="bor-max" style="margin-top: 10px;">
+			<div class="new-video">
+				<!--标题-->
+				<div class="nv-title">
+					<span><i class="fa fa-male"></i>每周热门</span>
+					<span><i class="fa fa-reply"></i>上一周</span>
+				</div>
+				<!--视频列表-->
+				<div class="nv-list">
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--38懂你-->
+		<section class="bor-max" style="margin-top: 10px;">
+			<div class="new-video">
+				<!--标题-->
+				<div class="nv-title">
+					<span><i class="fa fa-heart"></i>38懂你</span>
+					<span><i class="fa fa-refresh"></i>换一波</span>
+				</div>
+				<!--视频列表-->
+				<div class="nv-list">
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+					<div class="one-video">
+						<a href="videoPlayer.html" target="_blank">
+						<div class="ov-top" style="background: url(img/38av/download.jpg) no-repeat;"></div>
+						<div class="ov-down">
+							<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p>
+							<span>发布时间：2017-11-11</span>
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+        
+        
+#define($javascript_back)
+<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jquery.min.js"></script>
+<script type="text/javascript" src="$link.contextPath/assets/css/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript">
+function login() {
+	var info={name:$("#name").val(),pwd:$("#pwd").val()};
+    $.ajax({
+        url: 'login',
+        type: 'post',
+        data:info,
+        success: function (resp) {
+            alert(resp);
+        }
+    });
+}
+</script>
+#end

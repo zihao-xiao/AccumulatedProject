@@ -1,0 +1,42 @@
+i{margin:0px 5px;}
+/*导航*/
+.nav-max{display:flex;flex-flow: row wrap;background-color: #fff;box-shadow: 2px 2px 5px #ccc;border-bottom: solid 1px #ccc;height:50px;}
+.nav-max>div{box-sizing: border-box;flex: 0 0 100px;font-size:16px;line-height: 50px;text-align: center;cursor: pointer;}
+.nav-max>div.nav-logo>img{width:50px;}
+.nav-max>div:hover{border-top: solid 2px #f81131;}
+.nav-max>div:hover>a{color:#f81131;}
+.nav-max>div:first-child:hover{border: 0!important;}
+.nav-max>div>a{text-decoration: none;color:#333;display: block;width: 100%;height: 100%;}
+.nav-action{border-top: solid 2px #f81131;}
+.nav-action>a{color:#f81131!important;}
+/*页脚*/
+.ind-footr{background-color:#fff;border-top:solid 1px #ccc;text-align: center;padding:30px 0px;}
+.ind-footr>a{color:#333;text-decoration: none;font-size: 16px;}
+.ind-footr>a:hover{color:#F81131}
+/*分页*/
+.pageIng{text-align: center;}
+.pagination>li>a, .pagination>li>span{color:#F81131}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{background-color: #F81131;border-color: #F81131;}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{color: #fff;background-color: #F81131;}
+/*搜索区*/
+.input-group-addon{cursor: pointer;}
+.findShere{text-align: center;position: relative;margin-top:20px;border-bottom: solid 1px #ccc;height: 80px;background-color: #f5f5f5;}
+.findShere>img{position: absolute;left:100px;}
+.findShere>.form-inline{line-height: 80px;}
+.findShere>.form-inline input[type="text"]{width:500px;}
+.input-group:hover .input-group-addon{background-color: #F81131;border: 1px solid #F81131;color: #fff;}
+.input-group:hover .form-control{border:solid 1px #F81131;}
+/*筛选区*/
+.video-list{width:1200px;margin: 0 auto;margin-top:10px;}
+.vid-datatitle{height: 40px;border: solid 1px #ccc;}
+.vid-datatitle>div{width: 100px;height: 100%;border-right: solid 1px #ccc;float: left;cursor:pointer;text-align: center;line-height: 40px;}
+.vid-datatitle>div:hover{background-color: #F81131;color:#fff;border-right: solid 1px #F81131;}
+.vid-ismue{position: relative;}
+.vidmue-action{background-color: #F81131;color:#fff!important;}
+.vid-ismue:hover>ul{display: block;}
+.vid-ismue>ul{border: solid 1px #ccc;position: absolute;z-index: 2;padding:0px;display: none;top:38px;background-color: #fff;}
+.vid-ismue>ul>li{list-style: none;text-align: center;width:150px;color:#333;}
+.vid-ismue>ul>li:hover{background-color: #F81131;color:#fff;}
+/*下载*/
+.down-flie{float:left;font-size: 12px;color:#777;}
+.down-flie:hover{color:#F81131!important;}

@@ -1,0 +1,9 @@
+<!--导航-->
+<nav class="nav-max">
+	<div class="nav-logo"><img src="$link.contextPath/assets/img/logo.png" /></div>
+	<div class="nav-action" class=""><a href="$link.contextPath/index">首页</a></div>
+	<div><a href="$link.contextPath/video/line_video">在线视频</a></div>
+	<div><a href="$link.contextPath/image/line_img">38图区</a></div>
+	<div><a href="$link.contextPath/article/line_text">在线小说</a></div>
+	<div><a href="$link.contextPath/downData/down_data">下载专区</a></div>
+</nav>

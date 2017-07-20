@@ -1,0 +1,23 @@
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<link rel="icon" href="$link.contextPath/assets/img/favicon.ico" />
+		<link rel="stylesheet" href="$link.contextPath/assets/css/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="$link.contextPath/assets/css/publicStyle.css" />
+		
+<!-- 		<script type="text/javascript" src="$link.contextPath/assets/js/angular/angular.js"></script> -->
+<!-- 		<script type="text/javascript" src="$link.contextPath/assets/js/angular/angular.min.js"></script> -->
+<!-- 		<script type="text/javascript" src="$link.contextPath/assets/js/angular/MyController.js"></script> -->
+		
+		<script type="text/javascript" src="$link.contextPath/assets/js/jquery/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="$link.contextPath/assets/js/jquery/jquery-2.0.0.min.js"></script>
+		
+<!-- 		<script type="text/javascript" src="$link.contextPath/assets/js/jquery/jquery.form.js"></script> -->
+		
+<!-- 		<script type="text/javascript">var G.BasePath="$link.contextPath";</script> -->
+		$!javascript
+		
+	</head>

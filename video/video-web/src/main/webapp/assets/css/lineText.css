@@ -1,0 +1,19 @@
+.Text-List{overflow: hidden;}
+.Text-List>div{float: left;width:50%;padding:10px;}
+.one-Text>.one-actext{background-color: #f0f0f0;padding: 10px;overflow: hidden;cursor: pointer;}
+.one-Text>.one-actext:hover{background-color: #f5f5f5;box-shadow: 2px 2px 5px #ccc;}
+.one-Text>.one-actext:hover p{color:#F81131}
+.one-Text>.one-actext>a{color:#333;text-decoration: none;display: block;width: 100%;height: 100%;overflow: hidden;}
+.one-Text>.one-actext p{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;height: 45px;font-size: 16px;}
+.one-Text>.one-actext span{font-size:12px;float: right;color:#777;}
+.one-Text>.one-actext .down-flie{position:absolute;margin-top:-15px;display:inline-block;width:60px;height:20px;}
+/*小说预览界面*/
+.tlook-max{width:1200px;margin: 0 auto;min-height: 700px;background: url(../img/38av/bg_paper_mid.jpg);background-size: 1200px auto;}
+.tlook-title{padding:20px 0px;margin-bottom: 20px;border-bottom: solid 1px #BFB186;text-align: center;}
+.tlook-title>p{font-size: 24px;color: #956839;}
+.tlook-title>span{font-size: 14px;color: #956839;}
+.islookZW{color:#956839;padding:30px 50px;font-size: 18px;word-wrap:break-word;}
+.font-Update{width:70px;height:140px;position: fixed;right:20px;bottom: 100px;background-color: #fff;}
+.font-Update>div{width:100%;height: 50%;text-align: center;line-height: 70px;font-size: 30px;cursor: pointer;}
+.font-Update>div:hover{background-color: #F81131;color:#fff;}
+.font-Update>div:first-child{border-bottom: solid 1px #ccc;}

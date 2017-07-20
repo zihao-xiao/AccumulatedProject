@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	">
+
+	<!-- 注册拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.video.interceptor.SpringMVCInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!-- 扫描controller（controller层注入） -->
+	<context:component-scan base-package="com.video.dao,com.video.service,com.video.controller" />
+	<!-- 解决@Controller注解的使用前提配置 -->
+	<mvc:annotation-driven/>
+	
+	<mvc:default-servlet-handler />
+	
+	<!-- 启动对@AspectJ注解的支持 -->
+	<!-- 通知spring使用cglib而不是jdk的来生成代理方法 AOP可以拦截到Controller  proxy-target-class="true" -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
+	<!-- 避免IE在ajax请求时，返回json出现下载 -->
+	<bean id="jacksonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 对模型视图添加前后缀 -->
+	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/> -->
+	<mvc:resources location="/assets/" mapping="/assets/**"
+		cache-period="864000" />
+	<!-- 配置视图的显示 -->
+	<bean id="ViewResolver"
+		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="dateToolAttribute" value="dateTool" />
+
+		<property name="prefix" value="/" /><!-- 视图文件的前缀，即存放的路径 -->
+		<property name="suffix" value=".vm" /><!-- 视图文件的后缀名 -->
+
+		<property name="layoutUrl" value="layout/default.vm" /><!--指定layout文件 -->
+		<property name="toolboxConfigLocation" value="WEB-INF/velocity-tools.xml" />
+	</bean>
+
+	<!-- 配置velocity引擎 替换jsp -->
+	<bean id="velocityConfigurer"
+		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="/WEB-INF/templates/" /><!-- 
+			模板存放的路径 -->
+		<property name="velocityProperties">
+			<props>
+				<prop key="input.encoding">UTF-8</prop>
+				<prop key="output.encoding">UTF-8</prop>
+				<prop key="contentType">text/html;charset=UTF-8</prop>
+				<prop key="velocimacro.library">macro/macros.vm</prop>
+				<!-- <prop key="eventhandler.escape.html.match">/^(?!\$\!?(unesc_|screen_content|injector).*)/</prop> -->
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 上传参数配置 -->
+	<!-- 多部分文件上传 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	     <property name="maxUploadSize" value="104857600" />
+	     <property name="maxInMemorySize" value="4096" />
+	     <property name="defaultEncoding" value="UTF-8" />
+	</bean>
+</beans>

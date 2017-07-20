@@ -1,0 +1,192 @@
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/css/publicStyle.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/PlugIn/font-awesome.min.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/lineVideo.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/lineImg.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/index.css" />
+	<!--资源预览-->
+	<link rel="stylesheet" href="$link.contextPath/assets/css/FlieLook/jquery.iviewer.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/FlieLook/Jquery.Resources.css" />
+	<!--提示框-->
+	<link rel="stylesheet" href="$link.contextPath/assets/js/PromptBox/msgbox.css" />
+#end ##html
+
+	<!--搜索区-->
+	<section class="findShere">
+		<img src="$link.contextPath/assets/img/38av/imgLook.png">
+		<form class="form-inline">
+		  <div class="form-group">
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="想看什么，就来搜吧！">
+		      <div class="input-group-addon"><i class="fa fa-search"></i>搜索</div>
+		    </div>
+		  </div>
+		</form>
+	</section>
+	<!--图片列表-->
+	<section class="img-maxL">
+		<!---------------------------------------------------------------------------------->
+		
+		<div class="img-berList">
+			#foreach($bean in $list)
+			<div class="one-inglist">
+				<div class="img-onlist imgLook-list" data-length="$!bean.imgNum">
+					<img src="$bean.thumbnailsPaths[0]" data-srcPub="$bean.thumbnailsPaths[0]" data-srcMin="$bean.thumbnailsPaths[0]"/>
+					<div>
+						#foreach($img in $bean.sourcesPaths)
+						<img src="$img" data-srcPub="$img" data-srcMin="$img"/>
+						#end
+					</div>
+				</div>
+				<div class="img-text">
+					<p>$bean.imgDesc</p>
+					<span>发布时间：$!date.format('yyyy-MM-dd HH:mm',$!info.createTime)</span>
+				</div>
+			</div>
+			#end
+		</div>
+		
+		<!---------------------------------------------------------------------------------->
+<!-- 		<div class="img-berList"> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/4.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/5.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/6.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/9.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/9.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/9.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/4.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/7.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<!---------------------------------------------------------------------------------->
+<!-- 		<div class="img-berList"> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/8.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/8.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/8.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/2.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/2.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/2.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/6.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/5.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/9.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/9.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/9.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/3.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<!---------------------------------------------------------------------------------->
+<!-- 		<div class="img-berList"> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/4.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/6.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/6.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/8.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/8.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/3.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/4.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/5.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/5.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<!---------------------------------------------------------------------------------->
+<!-- 		<div class="img-berList"> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/2.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/2.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/2.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/3.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/3.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/7.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="one-inglist"> -->
+<!-- 				<div class="img-onlist imgLook-list" data-length="22"> -->
+<!-- 					<img src="$link.contextPath/assets/img/38av/girl/1.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/1.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/1.jpg"/> -->
+<!-- 					<div> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/4.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/4.jpg"/> -->
+<!-- 						<img src="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcPub="$link.contextPath/assets/img/38av/girl/7.jpg" data-srcMin="$link.contextPath/assets/img/38av/girl/7.jpg"/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="img-text"> -->
+<!-- 					<p>发山卡拉富华大厦卡拉翰范德萨发货快点撒喝咖啡发的撒开了发货的萨克雷锋的开始啦</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</section>
+	<div class="pageIng">
+		<ul class="pagination" id="pagination1"></ul>
+	</div>
+	
+#define($javascript_back)
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jquery.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/css/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jqPaginator.js" ></script>
+	<!--资源预览-->
+	<script type="text/javascript" src="$link.contextPath/assets/js/FlieLook/jquery-ui.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/js/FlieLook/jquery.mousewheel.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/js/FlieLook/jquery.iviewer.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/js/FlieLook/divscroll.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/js/FlieLook/Jquery.Resources.js" ></script>
+	<!--提示框-->
+	<script type="text/javascript" src="$link.contextPath/assets/js/PromptBox/msgbox.js"></script>
+	<script>
+		$.jqPaginator('#pagination1', {
+        totalPages: 100,
+        visiblePages: 10,
+        currentPage: 3,
+        onPageChange: function (num, type) {
+            //$('#p1').text(type + '：' + num);
+        }
+    });
+	</script>
+#end

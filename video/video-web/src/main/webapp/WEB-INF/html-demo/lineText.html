@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>在线小说</title>
+		<link rel="icon" href="../img/logo/38htmllogo.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/publicStyle.css" />
+		<link rel="stylesheet" href="../PlugIn/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/lineText.css" />
+	</head>
+	<body>
+		<!--导航-->
+		<nav class="nav-max">
+			<div class="nav-logo"><img src="../img/logo/logo4.png" /></div>
+			<div><a href="../index.html">首页</a></div>
+			<div><a href="../lineVideo/lineVideo.html">在线视频</a></div>
+			<div><a href="../lineImg/lineImg.html">38图区</a></div>
+			<div class="nav-action"><a href="../lineText/lineText.html">在线小说</a></div>
+			<div><a href="../downData/downData.html">下载专区</a></div>
+		</nav>
+		<!--搜索区-->
+		<section class="findShere">
+			<img src="../img/38av/novelLook.png">
+			<form class="form-inline">
+			  <div class="form-group">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="想看什么，就来搜吧！">
+			      <div class="input-group-addon"><i class="fa fa-search"></i>搜索</div>
+			    </div>
+			  </div>
+			</form>
+		</section>
+		<!--小说列表-->
+		<section class="video-list">
+			<!--小说筛选-->
+			<div class="vid-datatitle">
+				<div class="vidmue-action">综合排序</div>
+				<div>最新发布</div>
+				<div>最多预览</div>
+				<div class="vid-ismue">类型
+					<ul>
+						<li class="vidmue-action">不限</li>
+						<li>类型1</li>
+						<li>类型2</li>
+						<li>类型3</li>
+						<li>类型4</li>
+					</ul>
+				</div>
+			</div>
+			<!--列表开始-->
+			<div class="Text-List">
+				<!--每一个小说-->
+				<div class="one-Text">
+					<div class="one-actext">
+						<a href="../lineText/lineTextLook.html" target="_blank">
+						<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p>
+						<span>发布时间：2017-11-11</span>
+						</a>
+					</div>
+				</div>
+				<div class="one-Text">
+					<div class="one-actext">
+						<a href="../lineText/lineTextLook.html" target="_blank">
+						<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p>
+						<span>发布时间：2017-11-11</span>
+						</a>
+					</div>
+				</div>
+				<div class="one-Text">
+					<div class="one-actext">
+						<a href="../lineText/lineTextLook.html" target="_blank">
+						<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p>
+						<span>发布时间：2017-11-11</span>
+						</a>
+					</div>
+				</div>
+				<div class="one-Text">
+					<div class="one-actext">
+						<a href="../lineText/lineTextLook.html" target="_blank">
+						<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p>
+						<span>发布时间：2017-11-11</span>
+						</a>
+					</div>
+				</div>
+				<div class="one-Text">
+					<div class="one-actext">
+						<a href="../lineText/lineTextLook.html" target="_blank">
+						<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p>
+						<span>发布时间：2017-11-11</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--分页-->
+		<div class="pageIng">
+		<ul class="pagination" id="pagination1"></ul>
+		</div>
+		<!--底部脚本-->
+		<section class="ind-footr">
+			<a href="javascript:void(0)">关于我们</a>--
+			<a href="javascript:void(0)">商务合作</a>
+		</section>
+		<script type="text/javascript" src="../PlugIn/jquery.min.js" ></script>
+		<script type="text/javascript" src="../css/bootstrap/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../PlugIn/jqPaginator.js" ></script>
+		<script>
+			$.jqPaginator('#pagination1', {
+	        totalPages: 100,
+	        visiblePages: 10,
+	        currentPage: 3,
+	        onPageChange: function (num, type) {
+	            //$('#p1').text(type + '：' + num);
+	        }
+	    });
+		</script>
+	</body>
+</html>

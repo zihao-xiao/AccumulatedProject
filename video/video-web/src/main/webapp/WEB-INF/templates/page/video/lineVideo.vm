@@ -1,0 +1,130 @@
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/PlugIn/font-awesome.min.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/lineVideo.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/index.css" />
+#end ##html
+	<!--搜索区-->
+	<section class="findShere">
+		<img src="$link.contextPath/assets/img/38av/videoLook.png">
+		<form class="form-inline">
+			<div class="form-group">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="想看什么，就来搜吧！">
+					<div class="input-group-addon">
+						<i class="fa fa-search"></i>搜索
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+	<!--视频列表区-->
+	<section class="video-list">
+		<!--视频筛选区-->
+		<div class="vid-datatitle">
+			<div class="vidmue-action" s_id="1">综合排序</div>
+			<div s_id="2">最新发布</div>
+			<div s_id="3">最多播放</div>
+			<div class="vid-ismue">
+				时长
+				<ul>
+					<li class="vidmue-action">不限</li>
+					<li l_id="5">120分钟以上</li>
+					<li l_id="4">90-120分钟</li>
+					<li l_id="3">60-90分钟</li>
+					<li l_id="2">30-60分钟</li>
+					<li l_id="1">0-10分钟</li>
+				</ul>
+			</div>
+			<div class="vid-ismue">
+				类型
+				<ul >
+					<li class="vidmue-action">不限</li>
+					#foreach($type in $!videoTypes)
+					<li e_id="$!type.type">$!type.name</li>
+					#end
+				</ul>
+			</div>
+		</div>
+		<!--视频列表-->
+		<div class="nv-list" id="nv-list">
+<!-- 			<div class="one-video"> -->
+<!-- 				<a href="$link.contextPath/assets/videoPlayer.html" target="_blank"> -->
+<!-- 					<div class="ov-top" -->
+<!-- 						style="background: url($link.contextPath/assets/img/38av/download.jpg) no-repeat;"></div> -->
+<!-- 					<div class="ov-down"> -->
+<!-- 						<p>快来看看极品美少女竟然做这种事！真是令人震惊呐！快来看看极品美少女竟然做这种事！真是令人震惊呐！</p> -->
+<!-- 						<span>发布时间：2017-11-11</span> -->
+<!-- 					</div> -->
+<!-- 				</a> -->
+<!-- 			</div> -->
+		</div>
+	</section>
+	<div class="pageIng">
+		<ul class="pagination" id="pagination1"></ul>
+	</div>
+#define($javascript_back)
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jquery.min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/assets/css/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="$link.contextPath/assets/js/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jqPaginator.js"></script>
+	
+	<!-- 列表信息模型 -->
+	<script type="text/template" id="tpl">
+		<% _.each(list, function (data) { %>
+			<div class="one-video">
+				<a href="$link.contextPath/video/video_player?vid=<%=data.id%>" target="_blank">
+					<div class="ov-top"
+						style="background: url(<%=data.thumbnailsPath%>) no-repeat;"></div>
+					<div class="ov-down">
+						<p><%=data.videoDesc%></p>
+						<span>发布时间：<%=data.createTime%></span>
+					</div>
+				</a>
+			</div>
+		<% }); %>
+	</script>
+	
+	<script>
+		var tmpl = _.template($('#tpl').html());
+		
+		$(function(){
+			getVideoList(1.20);
+		})
+		//获取列表信息
+		function getVideoList(page,size){
+			var data={};
+			data.s = $("div.vid-datatitle > div.vidmue-action").attr("s_id");
+			data.l = $("div.vid-datatitle > ul:eq(0) > li.vidmue-action").attr("s_id");
+			data.e = $("div.vid-datatitle > ul:eq(1) > li.vidmue-action").attr("e_id");
+			$.ajax({
+	        	type: "POST",
+	        	url: "$link.contextPath/video/video_paging_query",
+	        	data: data, dataType: "json",
+	        	success: function(resp){
+	        		if(resp.errCode == 0 || resp.success){
+	        			var html = tmpl({list:resp.data.list});
+		        		$("#nv-list").empty().append(html);
+	             		setPage(resp.data);
+	              	}else{
+	                	alert(resp.msg);
+	              	}
+	        		
+                 }
+	         });
+		}
+		//页码设置
+		function setPage(page){
+			
+		}
+		
+		
+		$.jqPaginator('#pagination1', {
+	        totalPages: 100,
+	        visiblePages: 10,
+	        currentPage: 3,
+	        onPageChange: function (num, type) {
+	            //$('#p1').text(type + '：' + num);
+	        }
+	    });
+	</script>
+#end

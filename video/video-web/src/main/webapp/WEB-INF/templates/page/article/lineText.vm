@@ -1,0 +1,111 @@
+#define($javascript)
+	<link rel="stylesheet" href="$link.contextPath/assets/PlugIn/font-awesome.min.css" />
+	<link rel="stylesheet" href="$link.contextPath/assets/css/lineText.css" />
+#end ##html
+	<!--搜索区-->
+	<section class="findShere">
+		<img src="$link.contextPath/assets/img/38av/novelLook.png">
+		<form class="form-inline">
+		  <div class="form-group">
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="想看什么，就来搜吧！">
+		      <div class="input-group-addon"><i class="fa fa-search"></i>搜索</div>
+		    </div>
+		  </div>
+		</form>
+	</section>
+	<!--小说列表-->
+	<section class="video-list">
+		<!--小说筛选-->
+		<div class="vid-datatitle">
+			<div s_id="1">综合排序</div>
+			<div s_id="2">最新发布</div>
+			<div class="vidmue-action" s_id="3">最多预览</div>
+			<div class="vid-ismue">类型
+				<ul>
+					<li class="vidmue-action">不限</li>
+					#foreach($type in $!videoTypes)
+					<li e_id="$!type.type">$!type.name</li>
+					#end
+				</ul>
+			</div>
+		</div>
+		<!--列表开始-->
+		<div class="Text-List" id="Text-List">
+			<!--每一个小说-->
+<!-- 			<div class="one-Text"> -->
+<!-- 				<div class="one-actext"> -->
+<!-- 					<a href="$link.contextPath/article/line_text_look?aid=612e9ac57c74426e885921709d19f390" target="_blank"> -->
+<!-- 					<p>发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒发多少科技阿富汗当升科技阿富汗的卡萨发货的萨克发货的空间撒</p> -->
+<!-- 					<span>发布时间：2017-11-11</span> -->
+<!-- 					</a> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			
+		</div>
+	</section>
+	<!--分页-->
+	<div class="pageIng">
+		<ul class="pagination" id="pagination1"></ul>
+	</div>
+#define($javascript_back)
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jquery.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/css/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="$link.contextPath/assets/js/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/assets/PlugIn/jqPaginator.js" ></script>
+	<!-- 列表信息模型 -->
+	<script type="text/template" id="tpl">
+		<% _.each(list, function (data) { %>
+			<div class="one-Text">
+				<div class="one-actext">
+					<a href="$link.contextPath/article/line_text_look?aid=<%=data.id%>" target="_blank">
+					<p><%=data.titleDesc%></p>
+					<span>发布时间：<%=data.createdTime%></span>
+					</a>
+				</div>
+			</div>
+		<% }); %>
+	</script>
+	
+	<script>
+		var tmpl = _.template($('#tpl').html());
+		
+		$(function(){
+			getVideoList(1.20);
+		})
+		//获取列表信息
+		function getVideoList(page,size){
+			var data={};
+			data.s = $("div.vid-datatitle > div.vidmue-action").attr("s_id");
+			data.e = $("div.vid-datatitle > ul:eq(0) > li.vidmue-action").attr("e_id");
+			$.ajax({
+	        	type: "POST",
+	        	url: "$link.contextPath/article/article_paging_query",
+	        	data: data, dataType: "json",
+	        	success: function(resp){
+	        		if(resp.errCode == 0 || resp.success){
+	        			var html = tmpl({list:resp.data.list});
+		        		$("#Text-List").empty().append(html);
+	             		setPage(resp.data);
+	              	}else{
+	                	alert(resp.msg);
+	              	}
+	        		
+	             }
+	         });
+		}
+		//页码设置
+		function setPage(page){
+			
+		}
+	
+		$.jqPaginator('#pagination1', {
+	        totalPages: 100,
+	        visiblePages: 10,
+	        currentPage: 3,
+	        onPageChange: function (num, type) {
+	            //$('#p1').text(type + '：' + num);
+	        }
+	    });
+	</script>
+#end
